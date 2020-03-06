@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-int criptar(){
+/*int criptar(){
     int i;
     char message[100];
     message = getchar();
-}
+}*/
 
 int main()
 {
-	char message[100], ch;
+	char frase[20], ch;
 	int i, key;
 	
 	printf("Enter a message to encrypt: ");

@@ -1,4 +1,29 @@
 #include <stdio.h>
+<<<<<<< HEAD
+=======
+
+void criptografar();
+void descriptografar();
+void teste(){
+	printf("Teste");
+}
+int main()
+{
+	int op;
+	printf("Digite a opcao:\n\n1- Criptografar\n2-Descriptografar\n\n");
+	scanf ("%d", &op);
+	switch (op)
+	{
+	case 1:
+		criptografar();
+	break;
+	case 2:
+		descriptografar();
+	break;
+	case 3:
+		teste();
+	break;
+>>>>>>> cc67c42 (Update)
 
 int criptar(){
     int i;
@@ -6,6 +31,7 @@ int criptar(){
     message = getchar();
 }
 
+<<<<<<< HEAD
 int main()
 {
 	char message[100], ch;
@@ -15,6 +41,14 @@ int main()
 	gets(message);
 	printf("Enter key: ");
 	scanf("%d", &key);
+=======
+void criptografar(){
+	char crip[100], aux;
+	int i;
+	
+	printf("Digite: ");
+		gets(crip);
+>>>>>>> cc67c42 (Update)
 	
 		for(i = 0; crip[i] != '\0'; ++i){
 		aux = crip[i];

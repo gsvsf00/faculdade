@@ -1,5 +1,10 @@
 #include <stdio.h>
-//teste
+
+void criptografar();
+void descriptografar();
+void teste(){
+	printf("Teste");
+}
 int main()
 {
 	int op;
@@ -13,6 +18,9 @@ int main()
 	case 2:
 		descriptografar();
 	break;
+	case 3:
+		teste();
+	break;
 
 	default:
 		printf ("Valor invalido!\n");
@@ -25,7 +33,7 @@ int main()
 void criptografar(){
 	char crip[100], aux;
 	int i;
-
+	
 	printf("Digite: ");
 		gets(crip);
 	

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void tabuleiro(int x, int y)
+void tabuleiro(int x, int y){
 	int h, v;
 	if (!(x>=1 && x<=8 && y >=1 && y<=8)){
 		printf("Posição Invalida\n");
@@ -17,10 +17,11 @@ void tabuleiro(int x, int y)
 		if(v == y) continue;
 		printf("[%d,%d]\n", x, v);
 	}
-
+}
 
 
 
 int main(){
+	tabuleiro(1,3);
 	return 0;
 }

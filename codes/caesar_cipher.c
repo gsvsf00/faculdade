@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int criptar(){
+/*int criptar(){
     int i;
     char message[100];
     message = getchar();
-}
+}*/
 
 int main()
 {

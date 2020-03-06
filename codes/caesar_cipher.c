@@ -1,45 +1,37 @@
 #include <stdio.h>
 
-/*int criptar(){
-    int i;
-    char message[100];
-    message = getchar();
-}*/
-
 int main()
 {
-	char message[100], ch;
-	int i, key;
+	char crip[100], aux;
+	int i;
 	
-	printf("Enter a message to encrypt: ");
-	gets(message);
-	printf("Enter key: ");
-	scanf("%d", &key);
+	printf("Digite: ");
+	gets(crip);
 	
-	for(i = 0; message[i] != '\0'; ++i){
-		ch = message[i];
+	for(i = 0; crip[i] != '\0'; ++i){
+		aux = crip[i];
 		
-		if(ch >= 'a' && ch <= 'z'){
-			ch = ch + key;
+		if(aux >= 'a' && aux <= 'z'){
+			aux = aux + 3;
 			
-			if(ch > 'z'){
-				ch = ch - 'z' + 'a' - 1;
+			if(aux > 'z'){
+				aux = aux - 'z' + 'a' - 1;
 			}
 			
-			message[i] = ch;
+			crip[i] = aux;
 		}
-		else if(ch >= 'A' && ch <= 'Z'){
-			ch = ch + key;
+		else if(aux >= 'A' && aux <= 'Z'){
+			aux = aux + 3;
 			
-			if(ch > 'Z'){
-				ch = ch - 'Z' + 'A' - 1;
+			if(aux > 'Z'){
+				aux = aux - 'Z' + 'A' - 1;
 			}
 			
-			message[i] = ch;
+			crip[i] = aux;
 		}
 	}
 	
-	printf("Encrypted message: %s", message);
+	printf("Criptado: %s", crip);
 	
 	return 0;
 }

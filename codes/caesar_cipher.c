@@ -1,5 +1,27 @@
 #include <stdio.h>
 
+int main()
+{
+	int op;
+	printf("Digite a opcao:\n\n1- Criptografar\n2-Descriptografar\n\n");
+	scanf ("%d", &op);
+	switch (op)
+	{
+	case 1:
+		criptografar();
+	break;
+	case 2:
+		descriptografar();
+	break;
+
+	default:
+		printf ("Valor invalido!\n");
+	break;
+	}
+
+	return 0;
+}
+
 void criptografar(){
 	char crip[100], aux;
 	int i;
@@ -61,28 +83,4 @@ void descriptografar(){
 		}
 	}
 		printf("Criptado: %s", crip);
-}
-
-
-int main()
-{
-	int op;
-	printf("Digite a opcao:\n\n1- Criptografar\n2-Descriptografar\n\n");
-	scanf ("%d", &op);
-	switch (op)
-	{
-	case 1:
-		criptografar();
-	break;
-	case 2:
-		descriptografar();
-	break;
-
-	default:
-		printf ("Valor invalido!\n");
-	break;
-	}
-
-	getchar();
-	return 0;
 }

@@ -91,7 +91,7 @@ int main()
 	frase();
 	
 	while (1){
-	printf("Digite a opcao:\n\n1- Criptografar\n2-Descriptografar\n3-Sair\n");
+	printf("\nDigite a opcao:\n\n1- Criptografar\n2-Descriptografar\n3-Sair\n");
 	scanf ("%d", &op);
 	switch (op){
 	case 1:

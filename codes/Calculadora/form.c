@@ -3,7 +3,7 @@
 #include "form.h"
 
 float somar(float a, float b){
-return a+b;
+return (a+b);
 }
 
 float menos(float a, float b){

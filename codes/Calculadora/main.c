@@ -16,43 +16,49 @@ int main() {
 		
 		case 'a':
 		    printf("Primeiro valor: ");
-		    scanf("%d",&a);
+		    scanf("%f",&a);
 		    printf("Segundo valor: ");
-		    scanf("%d",&b);
+		    scanf("%f",&b);
 		    c = somar(a,b);
-		    printf("Soma: [%d]", c);
-		break;
+			getchar();
+		    printf("Soma: [%.2f]", c);
+			break;
 		
 		case 'b':
 		    printf("Primeiro valor: ");
-		    scanf("%d",&a);
+		    scanf("%f",&a);
 		    printf("Segundo valor: ");
-		    scanf("%d",&b);
+		    scanf("%f",&b);
 		    c = menos(a,b);
-		    printf("Subtrair: [%d]", c);
-		break;
+			getchar();
+		    printf("Subtrair: [%.2f]", c);
+			break;
 		
 		case 'c':
 		    printf("Primeiro valor: ");
-		    scanf("%d",&a);
+		    scanf("%f",&a);
 		    printf("Segundo valor: ");
-		    scanf("%d",&b);
+		    scanf("%f",&b);
 		    c = multi(a,b);
-		    printf("Multiplicar: [%d]", c);
-		break;
+			getchar();
+		    printf("Multiplicar: [%.2f]", c);
+			break;
 		
 		case 'd':
 		    printf("Primeiro valor: ");
-		    scanf("%d",&a);
+		    scanf("%f",&a);
 		    printf("Segundo valor: ");
-		    scanf("%d",&b);
+		    scanf("%f",&b);
 		    c = divid(a,b);
-		    printf("Dividir: [%d]", c);
-		break;
+			getchar();
+		    printf("Dividir: [%.2f]", c);
+			break;
 		case 'e': 
 		    system("exit");
-		break;
+			break;
+
 		default: printf("\n\nOpcao invalida\n");
+			getchar();
 			break;
 		}
 	} while (op != 'e');

@@ -18,7 +18,7 @@ int main(){
     menumain();
     scanf("%d", &questoes);
     getchar();
-    while (questoes==0){
+    while (questoes!=0){
     switch (questoes)
     {
     case 0:

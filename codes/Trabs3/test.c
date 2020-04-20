@@ -29,7 +29,7 @@ int main()
         printf("x:%d y:%d sobra:%d\n", x, y, sobra);
         x ^= y; // Faz o XOR bit a bit de x cm y
         printf("x:%d y:%d sobra:%d\n", x, y, sobra);
-        y = sobra << 1; // da um shift para esquerda para dobrar o valor
+        y = sobra << 1; // da um shift para esquerda no sobra
         printf("x:%d y:%d sobra:%d\n", x, y, sobra);
         printf("Termina\n");
         count++;

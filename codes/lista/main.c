@@ -1,4 +1,4 @@
-#include "q1func.h"
+#include "func.h"
 
 void menumain(){
     int i=1;
@@ -26,6 +26,12 @@ int main(){
         break;
     case 1:
         q1();
+        break;
+    case 2:
+        q2();
+        break;
+    case 3:
+        q3();
         break;
     default:
         break;

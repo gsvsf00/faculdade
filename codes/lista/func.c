@@ -58,6 +58,7 @@ int aleatorio()
 //6 questao
 
 //9 questao
+//Ja tinha feito semestre passado porém tava com erro e nunca ajeitei
 char reverte(char s[])
 {   
     int tamanho=0,i;
@@ -79,6 +80,7 @@ char reverte(char s[])
 }
 
 //10 questao
+//feito em sala, dei um commit no cod pro git
 void tabuleiro(int x, int y)
 {
 	int h, v;
@@ -96,7 +98,29 @@ void tabuleiro(int x, int y)
 		printf("[%d,%d]\n", x, v);
 	}
 }
+//11 questao
+
+int desenho(int base)
+{
+    int i, j,a,b;
+    for (i = 1; i <= base; i = i + 1)
+    {
+        for (j = 1; j <= i; j = j + 1) putchar('*');
+            putchar('\n');
+    }
+    
+    for (a = 1; a <= base; a++)
+    {
+        for (b = 1; b <= a; b++) putchar('*');
+            putchar('\n');
+    }
+
+    return 0;
+}
+
+
 //13 questao
+//Ja tinha feito semestre passado adsshhas
 int primo(int num)
 {
     int i, resultado = 0;
@@ -111,4 +135,39 @@ int primo(int num)
     return num;
  else
     return 0;
+}
+//14 questao
+int perfeito(int n)
+{    
+    if(soma_divisores(n)==n)
+        return n;
+    else return 0;
+}
+int soma_divisores(int n)
+{
+    int divisor, soma = 0;
+    for(divisor=1;divisor <= n/2;divisor++)
+        if(n%divisor==0)
+            soma=soma+divisor;
+    return soma;
+}
+
+//15 questao
+//Ja tinha feito semestre passado adsshhas
+int converterBin2Dec(long long valor_binario)
+{
+int valor_decimal = 0, proximo = 0, resto;
+//Enquanto existir valor no binário
+while (valor_binario != 0)
+{
+//Pega o resto da divisão do valor binário por 10
+resto = valor_binario % 10;
+//Divide o valor binário por 10
+valor_binario /= 10;
+//Incrementa o valor decimal com o resto da divisão multiplicado por 2 elevado ao proximo
+valor_decimal += resto * pow(2, proximo);
+//Incrementa a sequencial
+++proximo;
+}
+return valor_decimal;
 }

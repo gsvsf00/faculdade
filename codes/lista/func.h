@@ -37,6 +37,19 @@ char reverte(char s[]);
 void q10();
 void tabuleiro(int x, int y);
 
+//questao 11
+void q11();
+int desenho(int tamanho);
+
 //questao 13
 void q13();
 int primo(int num);
+
+//questao 14
+void q14();
+int perfeito(int n);
+int soma_divisores(int n);
+
+//questao 15
+void q15();
+int converterBin2Dec(long long valor_binario);

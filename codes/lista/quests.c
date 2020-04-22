@@ -180,6 +180,16 @@ void q10()
     tabuleiro(x,y);
     exit(0);
 }
+
+void q11()
+{
+    int x;
+    printf("Digite um valor: \n");
+    scanf("%d",&x);
+    desenho(x);
+    exit(0);
+}
+
 void q13()
 {
     int num,teste;
@@ -191,4 +201,25 @@ void q13()
     else
         printf("%d não é um número primo\n", num);
     exit(0);
+}
+
+void q14()
+{
+    int n, resultado;
+    printf("Digite um número N: \n");
+    scanf("%d", &n);
+    resultado = perfeito(n);
+    if (resultado == n)
+        printf("Numero perfeito\n");
+    else printf("Não é perfeito\n");
+
+    exit(0);
+}
+
+void q15()
+{
+    long long valor_binario;
+    printf("Digite numero binario: ");
+    scanf("%lld", &valor_binario);
+    printf("[%lld] em binario = [%d] em decimal\n", valor_binario, converterBin2Dec(valor_binario));
 }

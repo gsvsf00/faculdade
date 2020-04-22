@@ -96,6 +96,7 @@ void q3()
 
 void q4()
 {
+    printf("Tamanho em BYTE\n");
     printf("Tamanho de char: %d \n", sizeof(char));
     printf("Tamanho de unsigned char: %d \n", sizeof(unsigned char));
     printf("Tamanho de signed char: %d \n", sizeof(signed char));
@@ -112,5 +113,82 @@ void q4()
     printf("Tamanho de double: %d \n", sizeof(double));
     printf("Tamanho de long double: %d \n", sizeof(long double));
     
+    exit(0);
+}
+
+void q5()
+{
+    int algo,aleat,novo=0,antigo=0,count=0;
+
+    menu2();
+    scanf("%d", &algo);
+    getchar();
+    system("clear");
+    
+    if(algo == 1 && count == 0)
+    {
+        novo = aleatorio();
+        printf("[%d]\n", novo);
+        antigo = novo+1;
+        count++;
+        algo = 0;
+    }
+    if(algo==1 && count!=0)
+        printf("%d\n", antigo);
+    if(algo==2)
+        count=0;
+    if(algo==3)
+        exit(3);
+
+}
+
+void q6()
+{
+    char a,b;
+    printf("Digite uma letra: \n");
+    scanf("%c",&a);
+    getchar();
+    printf("Digite uma letra: \n");
+    scanf("%c",&b);
+    getchar();
+
+
+    if(a<b)
+        printf("'%c' vem antes de '%c'\n", a,b);
+    if(a>b)
+        printf("'%c' vem depois de '%s'\n", b,a);
+    if(a==b)
+        printf("'%s' são iguais '%s'\n", a,b);
+    exit(0);
+}
+
+void q9()
+{
+    char s[20];
+    scanf("%s",&s);
+    getchar();
+    printf("%s", reverte(s));
+    exit(0);
+}
+void q10()
+{
+    int x,y;
+    printf("Digite x: \n");
+    scanf("%d",&x);
+    printf("Digite y: \n");
+    scanf("%d",&y);
+    tabuleiro(x,y);
+    exit(0);
+}
+void q13()
+{
+    int num,teste;
+    printf("Digite um número: ");
+    scanf("%d", &num);
+    teste = primo(num);
+    if(teste==num)
+        printf("%d é um número primo\n", num);
+    else
+        printf("%d não é um número primo\n", num);
     exit(0);
 }

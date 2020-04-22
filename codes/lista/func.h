@@ -19,3 +19,24 @@ void q3();
 
 //Questão 4
 void q4();
+
+//Questão 5
+void q5();
+void menu2();
+int aleatorio();
+
+//Questão 6
+void q6();
+//int string(char a, char b);
+
+//questao 9
+void q9();
+char reverte(char s[]);
+
+//questao 10
+void q10();
+void tabuleiro(int x, int y);
+
+//questao 13
+void q13();
+int primo(int num);

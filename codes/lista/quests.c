@@ -70,8 +70,7 @@ void q2()
 void q3()
 {
     system("clear");
-    float a,b,c,d,e,f,x,y,result[2];
-    int i = 0;
+    float a,b,c,d,e,f,x,y;
     printf("ax+by=c\ndx+ey=f\n");
 
     printf("a:");
@@ -87,11 +86,31 @@ void q3()
     printf("f:");
     scanf("%f", &f);
     printf("\n%2.fx + %2.fy = %2.f\n%2.fx + %2.fy = %2.f\n", a, b, c, d, e, f);
-    do
-    {
-        result[i] = sistema(a,b,c,d,e,f);
-        i++;
-    }while (i!=2);
-    printf("\nx: %f\ny: %f\n",result[0], result[1]);
+        
+        y=(f*a-d*c)/(float)(a*e-d*b);
+        x=(c-b*y)/(float)a;
+        
+    printf("\nx: %f\ny: %f\n", x, y);
+    exit(0);
+}
+
+void q4()
+{
+    printf("Tamanho de char: %d \n", sizeof(char));
+    printf("Tamanho de unsigned char: %d \n", sizeof(unsigned char));
+    printf("Tamanho de signed char: %d \n", sizeof(signed char));
+    printf("Tamanho de int: %d \n", sizeof(int));
+    printf("Tamanho de unsigned int: %d \n", sizeof(unsigned int));
+    printf("Tamanho de signed int: %d \n", sizeof(signed int));
+    printf("Tamanho de short int: %d \n", sizeof(short int));
+    printf("Tamanho de unsigned short int: %d \n", sizeof(unsigned short int));
+    printf("Tamanho de signed short int: %d \n", sizeof(signed short int));
+    printf("Tamanho de long int: %d \n", sizeof(long int));
+    printf("Tamanho de signed long int: %d \n", sizeof(signed long int));
+    printf("Tamanho de unsigned long int: %d \n", sizeof(unsigned long int));
+    printf("Tamanho de float: %d \n", sizeof(float));
+    printf("Tamanho de double: %d \n", sizeof(double));
+    printf("Tamanho de long double: %d \n", sizeof(long double));
+    
     exit(0);
 }

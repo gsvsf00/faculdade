@@ -26,11 +26,13 @@ float delta(float a, float b, float c)
 }
 
 //3 questao
-float sistema(float a, float b, float c, float d, float e, float f)
+//Quero ajuda com retorno de 2 valores float
+
+/*float sistema(float a, float b, float c, float d, float e, float f)
 {
     float resultado[2];
-    resultado[0]=(f*a-d*c)/(a*e-d*b);
-    resultado[1]=(c-b*resultado[0])/a;
+    resultado[0]=(f*a-d*c)/(float)(a*e-d*b);
+    resultado[1]=(c-b*resultado[0])/(float)a;
     for(int i = 0;i<2;i++)
-    return resultado[i];
-}
+    return (float)resultado;
+}*/

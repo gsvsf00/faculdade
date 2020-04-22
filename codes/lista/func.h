@@ -15,4 +15,7 @@ float delta(float a, float b, float c);
 
 //Questão 3
 void q3();
-float sistema(float a, float b, float c, float d, float e, float f);
+//float sistema(float a, float b, float c, float d, float e, float f);
+
+//Questão 4
+void q4();

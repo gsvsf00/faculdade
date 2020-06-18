@@ -32,11 +32,43 @@ void a2(int x, int y)
 
 void b2(int x)
 {
-    for(int i = 0; i <= x; i++){
+    for(int i = 1; i <= x; i++){
         if(x%i==0)
             printf("[%d]", i);
-        //if(i < x-1)
-                //printf(",");
+    }
+    printf("\n");
+}
+
+void c2(int x)
+{
+    int a = 0, i = 1;
+    for(i; i < x; i++){
+        if(x%i==0){
+            printf("[%d]", i);
+            a+=i;
+        }
+    }
+    if(a==x)
+        printf("\n[%d] é numero perfeito.\n", x);
+    else printf("\n[%d] não é numero perfeito.\n", x);
+}
+
+void d2(int x)
+{
+    int i = 1, count = 0;
+    do
+    {
+        if(x%i==0){
+            count++;
+        }
+        i++;
+    } while (i<=x);
+
+    if(count <= 2){
+        printf("%d é primo.\n", x);
+        }
+    else {
+        printf("%d não é primo.\n", x);
     }
 }
 

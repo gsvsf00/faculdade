@@ -19,7 +19,7 @@ void q2()
 	system("clear");
 	printf("\n\n2q- Itens\n\n");
 	printf("\nEscolha uma opcao: ");
-	printf("\nb- Digite um ńumero inteiro n>0 e o programa mostra os divisores de n.\n");
+	printf("\na- Digita dois numeros inteiro n>0 e m>0 e o programa mostra se n ́e divisor de m.\nb- Digite um ńumero inteiro n>0 e o programa mostra os divisores de n.\nc- Digite um número inteiro n>0 e o programa deveretornar se n ́e perfeito.\nd- Digite um número inteiro n > 0 e o programa retorna se n ́e primo.\ne- Sair\n");
 	scanf ("%[^\n]s", &op);
 	switch (op) {
 		
@@ -46,11 +46,15 @@ void q2()
     	break;
 	
 	case 'c':
-
+        printf("x: ");
+        scanf("%d", &x);
+        c2(x);
 		break;
     
     case 'd':
-
+        printf("x: ");
+        scanf("%d", &x);
+        d2(x);
 		break;
 	
 	case 'e': 

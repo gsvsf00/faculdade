@@ -3,7 +3,7 @@
 #include <math.h>
 
 void q1();
-    void imprime(int x);
+    void a1(int x);
 void q2();
     void a2(int x, int y);
     void b2(int x);

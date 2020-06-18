@@ -25,7 +25,7 @@ void menumain(){
 
 int main(){
     int questoes;
-    system("clear");
+    system("cls");
     menumain();
     scanf("%d", &questoes);
     getchar();

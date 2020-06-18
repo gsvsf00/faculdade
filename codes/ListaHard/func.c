@@ -1,6 +1,6 @@
 #include "func.h"
 
-void imprime(int x)
+void a1(int x)
 {
     int num = 0, num2 = 0;
     if(num < 0) printf("Insira um valor maior que 0. \n");

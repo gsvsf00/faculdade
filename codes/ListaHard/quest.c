@@ -16,7 +16,7 @@ void q2()
 	float a,b,c;
     int x,y;
     
-	system("cls");
+	system("clear");
 	printf("\n\n2q- Itens\n\n");
 	printf("\nEscolha uma opcao: ");
 	printf("\na- Digita dois numeros inteiro n>0 e m>0 e o programa mostra se n ́e divisor de m.\nb- Digite um ńumero inteiro n>0 e o programa mostra os divisores de n.\nc- Digite um número inteiro n>0 e o programa deveretornar se n ́e perfeito.\nd- Digite um número inteiro n > 0 e o programa retorna se n ́e primo.\ne- Sair\n");

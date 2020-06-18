@@ -14,39 +14,52 @@ void q2()
 {
     char op;
 	float a,b,c;
-	do {
-		system("clear");
-		printf("\n\n2q- Itens\n\n");
-		printf("\nEscolha uma opcao: ");
-		printf("\na- Digita dois numeros inteiro n>0 e m>0 e o programa mostra se n ́e divisor de m.\nb- Digite um ńumero inteiro n>0 e o programa mostra os divisores de n.\nc- Digite um número inteiro n>0 e o programa deveretornar se n ́e perfeito.\nd- Sair\n");
-		scanf ("%[^\n]s", &op);
-		switch (op) {
+    int x,y;
+    
+	system("clear");
+	printf("\n\n2q- Itens\n\n");
+	printf("\nEscolha uma opcao: ");
+	printf("\nb- Digite um ńumero inteiro n>0 e o programa mostra os divisores de n.\n");
+	scanf ("%[^\n]s", &op);
+	switch (op) {
 		
-		case 'a':
-            q1();
-			break;
-		
-		case 'b':
+	case 'a':
+            
+        printf("x: ");
+        scanf("%d", &x);
+        printf("\ny: ");
+        scanf("%d", &y);
 
-			break;
+        if(x > 0 && y > 0 )
+        a2(x,y);
+        else{
+        printf("Valor Incorreto");
+        getchar();
+        q2();
+        }
+    	break;
 		
-		case 'c':
+	case 'b':
+        printf("x: ");
+        scanf("%d", &x);
+        b2(x);
+    	break;
+	
+	case 'c':
 
-			break;
-		
-		case 'd': 
-		    system("exit");
-			break;
+		break;
+    
+    case 'd':
 
-		default: printf("\n\nOpcao invalida\n");
-			getchar();
-			break;
+		break;
+	
+	case 'e': 
+	    system("exit");
+		break;
+
+	default: printf("\n\nOpcao invalida\n");
+		getchar();
+		break;
 		}
-	} while (op != 'd');
-
-    //int x;
-    //printf("Digite um valor maior que 0: ");
-    //scanf("%d", &x);
-    //check(x);
     exit(0);
 }

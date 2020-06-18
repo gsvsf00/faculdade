@@ -23,8 +23,20 @@ void imprime(int x)
     printf("\n");
 }
 
-void check(int x)
+void a2(int x, int y)
 {
-
-
+    if(x%y==0)
+        printf("y é divisor de x.\n");
+    else printf("y não é divisor de x.\n");
 }
+
+void b2(int x)
+{
+    for(int i = 0; i <= x; i++){
+        if(x%i==0)
+            printf("[%d]", i);
+        //if(i < x-1)
+                //printf(",");
+    }
+}
+

@@ -5,5 +5,6 @@
 void q1();
     void imprime(int x);
 void q2();
-    void check(int x);
+    void a2(int x, int y);
+    void b2(int x);
 

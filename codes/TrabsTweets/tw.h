@@ -3,8 +3,12 @@
 #include <string.h>
 
 extern int qnttwt;
+extern int qqtwt;
 
+void armazenameto();
 int defsize();
 
 void tweetar();
 void digite();
+
+void tweets();

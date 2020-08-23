@@ -12,6 +12,7 @@ void menumain(){
     printf("* 2-| Tweets:                                     *\n");
     printf("* 3-| Treending Topic:                            *\n");
     printf("* 4-| Armazenamento:                              *\n");
+    printf("* 5-| Limpar:                                     *\n");
     printf("* 0-| Sair:                                       *\n");
     printf("*-------------------------------------------------*\n");
     printf("Opção: ");
@@ -21,7 +22,7 @@ void menumain(){
 int main(){
     int choice;
     while (choice!=0){
-        system("clear");
+        //system("clear");
         menumain();
         scanf("%d", &choice);
         getchar();
@@ -38,9 +39,13 @@ int main(){
             tweets();
             break;
         case 3:
+            trendings();
             break;
         case 4:
         armazenameto();
+            break;
+        case 5:
+            clear();
             break;
         default:
             break;

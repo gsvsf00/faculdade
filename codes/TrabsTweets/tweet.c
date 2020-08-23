@@ -1,6 +1,6 @@
 #include "tw.h"
 
-char assunto[19], t[281], *ttransfer ,*tsalvo;
+char t[280], *ttransfer ,*tsalvo;
 int count = 0;
 
 void armazenameto(){
@@ -40,7 +40,7 @@ int defsize(){
     printf("Alocar de quantos em quantos: ");
     scanf("%d", &qqtwt);
 
-    ttransfer = (char*) malloc((281 * qnttwt) * sizeof(char));
+    ttransfer = (char*) malloc((280 * qnttwt) * sizeof(char));
 
     return 0;
 }
@@ -57,6 +57,7 @@ int defsize(){
         digite();
     }
 }*/
+
 void digite(){
     int lent;
     printf("Tweet: ");
@@ -116,8 +117,34 @@ void tweetar(){
     tsalvo = t;
     strcat(ttransfer, tsalvo);
     strcat(ttransfer, "\n");
+}
 
-
+void trendings(){
+    if(ttransfer != NULL){
+        int i,a, x=0;
+        char space[100];
+        for(i=0; ttransfer[i] != '\0'; i++){
+            char hash;
+            int j;
+            hash = ttransfer[i];
+            if(hash == '#'){
+                for(j = i; (ttransfer[j] != ' ') && (ttransfer[j] != '\0') && (ttransfer[j] != '\n'); j++){
+                    space[x] = ttransfer[j];
+                    x++;
+                }
+            }
+        }
+        printf("[%s]\n", space);
+        printf("%d", strlen(space));
+        /*for(a=0; (space[a] != '#') && (space[a] != '\n'); a++){
+            printf("%c", space[a]);
+        }*/
+        
+    }
+    else
+        printf("Não há tweets\n");
+        printf("\nPress 'Enter'");
+        getchar();
 }
 
 void tweets(){
@@ -127,4 +154,27 @@ void tweets(){
     printf("\n*******************End Of Time Line******************\n");
     printf("Press 'Enter'");
     getchar();
+}
+
+void clear(){
+    char ask;
+    if(ttransfer == NULL){
+        printf("Não há tweets\n");
+        printf("Press 'Enter'");
+        getchar();
+    }
+    else{
+        printf("\n**********************Limprar**********************\n");
+        printf("Deseja realmente limpar ? Obs: Tweets e Trending Topics irão ser deletados\n\nPress 'y' para Sim\nPress 'n' para Não\n");
+        printf("\n**********************Armazenamento**********************\n");
+        ask = getchar();
+        if(ask == 'y'){
+            free(ttransfer);
+            count = 0;
+        }
+        else{
+        printf("Press 'Enter'");
+        getchar();
+        }
+    }
 }

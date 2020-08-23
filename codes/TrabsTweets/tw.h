@@ -10,5 +10,8 @@ int defsize();
 
 void tweetar();
 void digite();
+void trendings();
 
 void tweets();
+
+void clear();

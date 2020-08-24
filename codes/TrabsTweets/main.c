@@ -2,7 +2,7 @@
 //Matricula: 473801
 //GitHub Repository: https://github.com/gsv99/faculdade
 
-//Compilar gcc main.c quests.c func.c -o main -lm
+//Compilar "gcc main.c tweet.c -o main"
 #include "tw.h"
 int qnttwt = 0, qqtwt=0;
 
@@ -22,7 +22,7 @@ void menumain(){
 int main(){
     int choice;
     while (choice!=0){
-        //system("clear");
+        system("clear");
         menumain();
         scanf("%d", &choice);
         getchar();
@@ -42,10 +42,10 @@ int main(){
             trendings();
             break;
         case 4:
-        armazenameto();
+            armazenameto();
             break;
         case 5:
-            clear();
+            clear;
             break;
         default:
             break;

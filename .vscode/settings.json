@@ -2,7 +2,8 @@
     "files.associations": {
         "fila.h": "c",
         "stdlib.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "random": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

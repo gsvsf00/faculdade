@@ -1,29 +1,6 @@
 #include "tw.h"
 
-char t[280], *ttransfer ,*tsalvo;
-int count = 0;
-
-void armazenameto(){
-    char ask;
-    if (qnttwt == 0)
-        defsize();
-    else{
-        printf("\n**********************Armazenamento**********************\n");
-        printf("Máximo Tweets [%d]\nAlocamento de quantos por quanto [%d]\n", qnttwt,qqtwt);
-        printf("Deseja mudar o armazenmanto ? Obs: Tweets e Trending Topics irão ser deletados\n\nPress 'y' para Sim\nPress 'n' para Não\n");
-        printf("\n**********************Armazenamento**********************\n");
-        ask = getchar();
-        if(ask == 'y'){
-            free(ttransfer);
-            count = 0;
-            defsize();
-        }
-        else{
-        printf("Press 'Enter'");
-        getchar();
-        }
-    }
-}
+int count = 0, qnttwt = 0 , qqtwt = 0;
 
 int defsize(){
 
@@ -40,41 +17,68 @@ int defsize(){
     printf("Alocar de quantos em quantos: ");
     scanf("%d", &qqtwt);
 
-    ttransfer = (char*) malloc((280 * qnttwt) * sizeof(char));
-
     return 0;
 }
-
-/*void digite(){
-    printf("Tweet: ");
-    fgets(t);
-    if(strlen(t) > 281){
-        printf("Você ultrapossou o limite de char permetido.\nDigite novamente: ");
-        int ch;
-        do 
-            ch = getchar(); 
-        while (ch != '\n'); // limpa caracteres extra
-        digite();
+/*void armazenameto(){
+    char ask;
+    if (qnttwt == 0)
+        defsize();
+    else{
+        printf("\n**********************Armazenamento**********************\n");
+        printf("Máximo Tweets [%d]\nAlocamento de quantos por quanto [%d]\n", qnttwt,qqtwt);
+        printf("Deseja mudar o armazenmanto ? Obs: Tweets e Trending Topics irão ser deletados\n\nPress 'y' para Sim\nPress 'n' para Não\n");
+        printf("\n**********************Armazenamento**********************\n");
+        ask = getchar();
+        if(ask == 'y'){
+            free(*t);
+            count = 0;
+            defsize();
+        }
+        else{
+        printf("Press 'Enter'");
+        getchar();
+        }
     }
 }*/
 
+
+
 void digite(){
-    int lent;
+    char *t[qnttwt];
+    
+    for (int i = 0; i < qnttwt; i++){
+        t[i]= (char*) malloc(281);
+        
+    }
+    
     printf("Tweet: ");
-    fgets(t, sizeof t, stdin);
-    lent = strlen(t);
+    fgets(t[count], sizeof ((char*)malloc(280)), stdin);
+}
+
+/*void digite(){
+    int lent;
+    char *t[qnttwt];
+    for (int i = 0; i < qnttwt; i++){
+        t[i]= (char*) malloc(281);
+        
+    }
+    
+    printf("Tweet: ");
+    fgets(t[count], sizeof ((char*)malloc(280)), stdin);
+    
+    lent = strlen(*t);
     if (t[lent - 1] == '\n') {
-    /* nome completo, com ENTER incluido */
+    // nome completo, com ENTER incluido
         t[--lent] = 0; // apagar o ENTER
     } 
     else {
-    /* ENTER e possivelmente outros caracteres ficaram no buffer */
+    // ENTER e possivelmente outros caracteres ficaram no buffer
     int ch;
     do 
         ch = getchar(); 
     while (ch != '\n'); // limpa caracteres extra
     }
-}
+}*/
 
 void tweetar(){
     int x;
@@ -114,36 +118,21 @@ void tweetar(){
         getchar();
     }
     
-    tsalvo = t;
-    strcat(ttransfer, tsalvo);
-    strcat(ttransfer, "\n");
 }
 
-void trendings(){
-    if(ttransfer != NULL){
-        int i, x=0;
-        char hashtag[100];
-        for(i=0; ttransfer[i] != '\0'; i++){
-            char hash;
-            int j;
-            hash = ttransfer[i];
-            if(hash == '#'){
-                for(j = i; (ttransfer[j] != ' ') && (ttransfer[j] != '\0') && (ttransfer[j] != '\n'); j++){
-                    hashtag[x] = ttransfer[j];            
-                    x++;
+/*void trendings(){
+    if(t != NULL){
+        int i,j;
+        char *hashtag;
+        for(i=0; t[i] != '\0'; i++){
+            if(t[i]=='#'){
+                for(j = i; t[j] != ' '; j++){
+                    printf("%c");
                 }
             }
-        }
 
-        //Gambiarra pra separar a string
-        int tamanho = strlen(hashtag);
-        char *token = strtok(hashtag, "#");
-        
-        while(token != NULL) {
-            printf("\n[#%s]", token);
-            token = strtok(NULL, "#");
-        }   
-    }
+        }        
+    }        
     else
         printf("Não há tweets\n");
         printf("\nPress 'Enter'");
@@ -152,8 +141,10 @@ void trendings(){
 
 void tweets(){
     //int count = 0;
+    int j;
     printf("\n**********************Time Line**********************\n");
-    printf("%s", ttransfer);
+    for(j = 0; j < count ; j++)
+        printf("%s", t[j]);
     printf("\n*******************End Of Time Line******************\n");
     printf("Press 'Enter'");
     getchar();
@@ -161,7 +152,7 @@ void tweets(){
 
 void clear(){
     char ask;
-    if(ttransfer == NULL){
+    if(t == NULL){
         printf("Não há tweets\n");
         printf("Press 'Enter'");
         getchar();
@@ -172,7 +163,7 @@ void clear(){
         printf("\n**********************Armazenamento**********************\n");
         ask = getchar();
         if(ask == 'y'){
-            free(ttransfer);
+            free(t);
             count = 0;
         }
         else{
@@ -180,4 +171,4 @@ void clear(){
         getchar();
         }
     }
-}
+}*/

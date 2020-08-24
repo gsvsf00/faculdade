@@ -5,6 +5,7 @@
 extern int qnttwt;
 extern int qqtwt;
 
+
 void armazenameto();
 int defsize();
 

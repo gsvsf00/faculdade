@@ -72,3 +72,61 @@ void d2(int x)
     }
 }
 
+void a3(int x, int y)
+{
+    
+    int num = 0, num2 = 0, i = x;
+    for(x; x <= y; x++){
+        if(x%2==0)
+        {
+            printf("[%d]", x);
+            num += x;
+            if(x > x-1)
+                printf(",");
+        }
+        else 
+        {
+            num2 += x;
+        }
+    }
+    printf("\nSoma Par: [%d]",num);
+    printf("\nSoma Impar: [%d]",num2);
+    printf("\n");
+}
+
+void b3( int x, int y)
+{
+int a, i, j;
+    for(j = x; j<=y; j++){
+        a = 0, i = 1;
+        for(i; i < j; i++){
+            if(j%i==0){
+                printf("[%d]", i);
+                a+=i;
+            }
+        }
+        if(a==j)
+            printf("\n[%d] é numero perfeito.\n", j);
+        else printf("\n[%d] não é numero perfeito.\n", j);
+    }
+}
+
+void c3(int x, int y)
+{
+    int i,j,divisor,aux=0;
+    for(i = x ; i< y; i++){
+        divisor=0;
+        for(j=1;j<=i;j++){
+            if(i%j==0)
+            {
+                divisor++;
+            }
+
+        }
+        if(divisor==2)
+            {
+                aux=aux+i;
+            }
+    }
+    printf("\nA soma dos primos é: [%d]\n", aux);
+}

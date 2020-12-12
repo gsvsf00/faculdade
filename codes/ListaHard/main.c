@@ -8,15 +8,9 @@
 void menumain(){
     int i=1,j=9,h=13;
     
-    for(i; i<=2;i++){
+    for(i; i<=3;i++){
         printf("Questao[%d]:\n", i);
     }
-    /*for(j; j<=11;j++){
-        printf("Questao[%d]:\n", j);
-    }
-    for(h; h<=15;h++){
-        printf("Questao[%d]:\n", h);
-    }*/
     printf("Digite 0 para sair:\n");
     printf("Digite qual questao: ");
 }
@@ -41,10 +35,10 @@ int main(){
     case 2:
         q2();
         break;
-    /*case 3:
+    case 3:
         q3();
         break;
-    case 4:
+    /*case 4:
         q4();
         break;
     case 5:

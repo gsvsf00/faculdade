@@ -9,6 +9,10 @@ void q2();
     void b2(int x);
     void c2(int x);
     void d2(int x);
+void q3();
+    void a3(int x, int y);
+    void b3(int x, int y);
+    void c3(int x, int y);
 
 
 

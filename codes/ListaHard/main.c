@@ -6,9 +6,9 @@
 #include "func.h"
 
 void menumain(){
-    int i=1,j=9,h=13;
+    int i=1;
     
-    for(i; i<=3;i++){
+    for(i; i<=7;i++){
         printf("Questao[%d]:\n", i);
     }
     printf("Digite 0 para sair:\n");
@@ -38,7 +38,7 @@ int main(){
     case 3:
         q3();
         break;
-    /*case 4:
+    case 4:
         q4();
         break;
     case 5:
@@ -47,7 +47,10 @@ int main(){
     case 6:
         q6();
         break;
-    case 9:
+    case 7:
+        q7();
+        break;
+    /*case 9:
         q9();
         break;        
     case 10:

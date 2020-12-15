@@ -141,3 +141,34 @@ void q3()
     exit(0);
 }
 
+void q4()
+{
+    int x;
+    printf("Digite um valor N: ");
+    scanf("%d", &x);
+    q4primo(x);
+    exit(0);
+}
+
+void q5()
+{
+    int x;
+    printf("Digite um valor maior que 0: ");
+    scanf("%d", &x);
+    if(x == 0){
+        printf("X = 0\n");
+        q5();
+        }
+    a5(x);
+    exit(0);
+}
+
+void q6(){
+    printf("Não consegui\n");
+    exit(0);
+}
+
+void q7(){
+    printf("Não consegui\n");
+    exit(0);
+}

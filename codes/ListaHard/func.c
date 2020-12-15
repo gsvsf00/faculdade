@@ -130,3 +130,39 @@ void c3(int x, int y)
     }
     printf("\nA soma dos primos é: [%d]\n", aux);
 }
+
+int qtprimo(int num)
+{
+    int resultado = 0;
+    for (int j = 2; j <= num / 2; j++) {
+            if (num % j == 0){
+            resultado++;
+            break;
+            }
+        }
+    if (resultado == 0 && num != 0 && num != 1){
+        return num;
+    }
+    
+    return 0;
+}
+
+void q4primo(int x){
+    for(int i=3; i<=x; i++){
+        if((qtprimo(i) == i) && (qtprimo(i-2) == i-2)){
+            printf("\nPrimos Gemêos:");
+            printf("[%d,%d]", i-2, i);
+        }
+    }
+    printf("\n");
+}
+
+int a5(int n){
+    int k;
+    float h = 0;
+    for (k = n; k >= 1; k = k - 1)
+        h = h + 1.0 / k;
+    printf("%0.5f\n", h);
+    return 0;   
+}
+

@@ -164,11 +164,25 @@ void q5()
 }
 
 void q6(){
-    printf("Não consegui\n");
+    int x;
+    printf("Digite um valor maior que 0: ");
+    scanf("%d", &x);
+    if(x == 0){
+        printf("X = 0\n");
+        q5();
+        }
+    a6(x);
     exit(0);
 }
 
 void q7(){
-    printf("Não consegui\n");
+    int x;
+    printf("Digite um valor maior que 0: ");
+    scanf("%d", &x);
+    if(x == 0){
+        printf("X = 0\n");
+        q5();
+        }
+    printf("%d", a7(x));
     exit(0);
 }

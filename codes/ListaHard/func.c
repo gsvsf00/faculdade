@@ -160,9 +160,25 @@ void q4primo(int x){
 int a5(int n){
     int k;
     float h = 0;
-    for (k = n; k >= 1; k = k - 1)
-        h = h + 1.0 / k;
+    for (k = 1; k<=n; k++)
+        h = h + 1.0/k;
     printf("%0.5f\n", h);
     return 0;   
 }
 
+int a6(int n){
+    int k;
+    float h = 0;
+    for (k = 1; k<=n; k++){
+        h = h + (float)k/(n-k+1);
+    }
+    printf("%0.5f\n", h);
+    return 0;   
+}
+
+int a7(int n){
+    if(n%2 == 0){
+        n*=-1;
+    }
+    return 1/n + a7(n-1);
+}

@@ -186,3 +186,4 @@ void q7(){
     printf("%d", a7(x));
     exit(0);
 }
+//

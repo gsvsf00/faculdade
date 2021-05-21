@@ -50,24 +50,7 @@ int main(){
     case 7:
         q7();
         break;
-    /*case 9:
-        q9();
-        break;        
-    case 10:
-        q10();
-        break;
-    case 11:
-        q11();
-        break;
-    case 13:
-        q13();
-        break;
-    case 14:
-        q14();
-        break;
-    case 15:
-        q15();
-        break;*/
+
     default:
         break;
         }

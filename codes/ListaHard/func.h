@@ -24,8 +24,15 @@ void q5();
 void q6();
     int a6(int n);
 void q7();
-    int a7(int n);
-
+    float a7(int n);
+void q8();
+    float a8(int n);
+void q9();
+    int fat(int n);
+    int binomio(int n, int k);
+    void pascal(int x);
+    
+    
 
 
 //

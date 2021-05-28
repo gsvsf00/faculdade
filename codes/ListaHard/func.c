@@ -176,10 +176,49 @@ int a6(int n){
     return 0;   
 }
 
-int a7(int n){
+float a7(int n){
     if(n%2 == 0){
         n*=-1;
     }
-    return 1/n + a7(n-1);
+    return (float)1/n + a7(n-1);
 }
-//
+
+float a8(int n){   
+    int i=1;
+    double pi=0, aux1=1;
+    for(i=1;i<=n;i++){
+        if(i%2!=0)
+            pi=pi+4/aux1;
+        else
+            pi=pi-4/aux1;
+        aux1=aux1+2;
+        } 
+    return (float)pi;
+}
+
+// QUESTAO 9
+int fat(int n){
+    int f = 1,i;
+    for(i=n; i>0; i--)
+    {
+        f = f*i;
+    }
+    return f;
+}
+
+int binomio(int n, int k){
+    return fat(n) / (fat(k)*fat(n-k));
+}
+
+void pascal (int x)
+{
+    int i,j;
+    for(i=0;i<=x;i++)
+    {
+        for(j=0;j<=i;j++)
+        {
+            printf("%d ", binomio(i,j));
+        }
+        printf("\n");
+    }
+}

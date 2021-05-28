@@ -8,7 +8,7 @@
 void menumain(){
     int i=1;
     
-    for(i; i<=7;i++){
+    for(i=6; i<=10;i++){
         printf("Questao[%d]:\n", i);
     }
     printf("Digite 0 para sair:\n");
@@ -49,6 +49,15 @@ int main(){
         break;
     case 7:
         q7();
+        break;
+    case 8:
+        q8();
+        break;
+    case 9:
+        q9();
+        break;
+    case 10:
+        q9();
         break;
 
     default:

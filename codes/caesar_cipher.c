@@ -149,6 +149,7 @@ int main()
 	
 	while (1){
 <<<<<<< HEAD
+<<<<<<< HEAD
 	printf("Digite a opcao:\n\n1- Criptografar\n2-Descriptografar\n3-Sair\n");
 	scanf ("%d", &op);
 	switch (op){
@@ -165,6 +166,11 @@ int main()
 	break;
 		}
 =======
+=======
+=======
+		system("clear");
+>>>>>>> 6a5992c (Up)
+>>>>>>> a376a95 (Up)
     	printf("\nDigite a opcao:\n\n1- Criptografar\n2-Descriptografar\n3-Sair\n");
     	scanf ("%d", &op);
     	switch (op){
@@ -184,8 +190,12 @@ int main()
 	}
 	return 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 90649fa (Update)
 }
 =======
 }
 >>>>>>> 2875a9e (up)
+=======
+}
+>>>>>>> 6a5992c (Up)

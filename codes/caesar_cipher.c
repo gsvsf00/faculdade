@@ -64,6 +64,10 @@ int main()
 	frase();
 	
 	while (1){
+<<<<<<< HEAD
+=======
+		system("clear");
+>>>>>>> 5d0d321a74d79056c39a798ed8bc2c0cb0243857
     	printf("\nDigite a opcao:\n\n1- Criptografar\n2-Descriptografar\n3-Sair\n");
     	scanf ("%d", &op);
     	switch (op){

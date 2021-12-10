@@ -4,7 +4,29 @@
 
 //Compilar "gcc main.c tweet.c -o main"
 #include "tw.h"
-int qnttwt = 0, qqtwt=0;
+
+int main(){
+
+    char tweattar[280]= {"Será que essa merda vai da certo? espero que simn"};
+
+    adicionar(tweattar,0);
+    adicionar(tweattar,1);
+    adicionar(tweattar,2);
+    
+    imprimir();
+    printf("\n");
+    //erase();
+    //imprimir();
+    return 0;
+}
+
+
+
+
+
+
+
+/*int qnttwt = 0, qqtwt=0;
 
 void menumain(){
     printf("\n*--------------------Bem-Vindo--------------------*\n");
@@ -52,4 +74,4 @@ int main(){
             }
     }
     return 0;
-}
+}*/

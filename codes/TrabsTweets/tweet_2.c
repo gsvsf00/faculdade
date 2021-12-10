@@ -10,16 +10,16 @@ NO *inicio = NULL;
 NO *fim = NULL;
 int tam = 0;
 
-void adicionar(char twe[280], int pos){
+void adicionar(char *twe, int pos){
     if(pos >= 0 && pos <= tam){
         
         NO *novo =(NO*) malloc (sizeof(NO));
-        novo->twe[280] = twe[280];
+        strcpy(novo->twe, twe);
         novo->prox = NULL;
         
         if(inicio == NULL){ //tam == 0 - lista vazia :D
-            inicio = twe[280];
-            fim = twe[280];
+            inicio = novo;
+            fim = novo;
         }else if(pos == 0){ //no inicio da lista
             novo->prox = inicio;
             inicio = novo;
@@ -48,6 +48,18 @@ void imprimir(){
         aux = aux->prox;
     }
 }
+
+/*void imprime(contato *c, letras *l){
+	contato *p=c;
+	letras *t=l;
+	while(p!=NULL && t!=NULL){
+		//printf("\n");
+		printf("%c-> %s %s\n",t->inicial,p->nome,p->sobrenome);
+	
+	t =t->prox;	
+	p=p->prox;	
+	}
+}*/
 
 int remover(int pos){
     if(pos >=0 && pos < tam){

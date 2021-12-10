@@ -6,6 +6,10 @@ extern int qnttwt;
 extern int qqtwt;
 
 
+void adicionar(char twe[280], int pos);
+void imprimir();
+int remover(int pos);
+
 void armazenameto();
 int defsize();
 

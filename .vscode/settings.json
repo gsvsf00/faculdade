@@ -3,7 +3,8 @@
         "fila.h": "c",
         "stdlib.h": "c",
         "stdio.h": "c",
-        "random": "c"
+        "random": "c",
+        "tw.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

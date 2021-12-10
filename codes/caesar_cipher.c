@@ -38,6 +38,7 @@ int i;
 
 void frase() {
 	printf("Enter a String:\t");
+	fflush(stdin);
 	scanf("%[^\n]s", crip);
 >>>>>>> 90649fa (Update)
 }
@@ -125,15 +126,15 @@ void descriptografar(){
 		if(aux >= 'a' && aux <= 'z'){
 			aux = aux - 3;
 			
-			if(aux > 'z'){
-				aux = aux - 'z' + 'a' - 1;
+			if(aux < 'a'){
+				aux = aux + 'z' - 'a' + 1;
 			}
 			crip[i] = aux;
 		}
 		else if(aux >= 'A' && aux <= 'Z'){
 			aux = aux - 3;			
-			if(aux > 'Z'){
-				aux = aux - 'Z' + 'A' - 1;
+			if(aux < 'A'){
+				aux = aux + 'Z' - 'A' + 1;
 			}
 			crip[i] = aux;
 		}
@@ -147,6 +148,7 @@ int main()
 	frase();
 	
 	while (1){
+<<<<<<< HEAD
 	printf("Digite a opcao:\n\n1- Criptografar\n2-Descriptografar\n3-Sair\n");
 	scanf ("%d", &op);
 	switch (op){
@@ -162,7 +164,28 @@ int main()
 		printf ("Valor invalido!\n");
 	break;
 		}
+=======
+    	printf("\nDigite a opcao:\n\n1- Criptografar\n2-Descriptografar\n3-Sair\n");
+    	scanf ("%d", &op);
+    	switch (op){
+    	case 1:
+    		criptografar();
+    	break;
+    	case 2:
+    		descriptografar();
+    	break;
+    	case 3:
+    			exit(0);
+    	default:
+    		printf ("Valor invalido!\n");
+    	break;
+    		}
+>>>>>>> 2c1f3f4 (up)
 	}
 	return 0;
+<<<<<<< HEAD
 >>>>>>> 90649fa (Update)
 }
+=======
+}
+>>>>>>> 2875a9e (up)

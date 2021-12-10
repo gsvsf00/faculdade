@@ -19,16 +19,16 @@ void adicionar(int valor, int pos){
         novo->prox = NULL;
         
         if(inicio == NULL){ //tam == 0 - lista vazia :D
-            inicio = novo;
-            fim = novo;
+            p->inicio = novo;
+            p->fim = novo;
         }else if(pos == 0){ //no inicio da lista
-            novo->prox = inicio;
-            inicio = novo;
+            novo->prox = p->inicio;
+            p->inicio = novo;
         }else if(pos == tam){// no fim da lista
-            fim->prox = novo;
-            fim = novo;
+            p->fim->prox = novo;
+            p->fim = novo;
         }else{
-            NO *aux = inicio;
+            NO *aux = p->inicio;
             int i;
             for(i=0; i< pos-1; i++){
                 aux = aux->prox;

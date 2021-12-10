@@ -2,13 +2,26 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct no{
+    char twe[280];
+    struct no * prox;
+    struct no * ant;
+}NO;
+
+typedef struct bloco{
+    NO *inicio;
+    NO *fim;
+    int tam;
+}BLOCO;
+
+
+void adicionar(BLOCO *p, char *twe);
+void imprimir(BLOCO *p);
+int remover(int pos);
+BLOCO* inicializa(BLOCO *p);
+
 extern int qnttwt;
 extern int qqtwt;
-
-
-void adicionar(char twe[280], int pos);
-void imprimir();
-int remover(int pos);
 
 void armazenameto();
 int defsize();

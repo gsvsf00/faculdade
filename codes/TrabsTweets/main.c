@@ -5,15 +5,22 @@
 //Compilar "gcc main.c tweet.c -o main"
 #include "tw.h"
 
-int main(){
+BLOCO* inicializa(BLOCO *p){
+    NO *inicio = NULL;
+    NO *fim = NULL;
+    int tam = 0;
 
+    return p;
+}
+
+int main(){
+    BLOCO *A;
+    A = inicializa(A);
     char tweattar[280]= {"Será que essa merda vai da certo? espero que simn"};
 
-    adicionar(tweattar,0);
-    adicionar(tweattar,1);
-    adicionar(tweattar,2);
+    adicionar(A,tweattar);
     
-    imprimir();
+    //imprimir();
     printf("\n");
     //erase();
     //imprimir();

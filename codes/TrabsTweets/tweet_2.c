@@ -1,16 +1,25 @@
 #include "tw.h"
 
-typedef struct no{
-    char twe[280];
-    struct no * prox;
-    struct no * ant;
-}NO;
+void adicionar(BLOCO *p, char *twe){
+    NO *novo =(NO*) malloc (sizeof(NO));
+    strcpy(novo->twe, twe);
+    novo->prox = NULL;
+    if(p->tam == 0)
+        printf("Teste\n");
+    if(p->inicio == NULL){ //tam == 0 - lista vazia :D
+        printf("Teste\n");
+        p->inicio = novo;
+        p->fim = novo;
+    }else{// no fim
+        printf("Teste\n");
+        p->fim->prox = novo;
+        p->fim = novo;
+    }
+    p->tam++;
+}
 
-NO *inicio = NULL;
-NO *fim = NULL;
-int tam = 0;
 
-void adicionar(char *twe, int pos){
+/*void adicionar(char *twe, int pos){
     if(pos >= 0 && pos <= tam){
         
         NO *novo =(NO*) malloc (sizeof(NO));
@@ -37,19 +46,23 @@ void adicionar(char *twe, int pos){
         }
         tam++;
     }
-}
+}*/
 
-void imprimir(){
-    NO *aux = inicio;
+void imprimir(BLOCO *p){
+    NO *aux = p->inicio;
     int i;
-    printf("Imprimindo a lista :D\n");
-    for(i=0; i<tam; i++){
-        printf("%s\n", aux->twe);
-        aux = aux->prox;
-    }
+    if(p->inicio == NULL){
+		printf("\nFila Vazia!!");
+	}else{
+		aux = p->inicio;
+		do{
+			printf("%s \n", aux->twe);
+			aux = aux->prox;
+		} while(aux != NULL);
+	}
 }
 
-int remover(int pos){
+/*int remover(int pos){
     if(pos >=0 && pos < tam){
         if(pos == 0){ //inicio
             NO* lixo = inicio;
@@ -78,7 +91,7 @@ int remover(int pos){
             //Já estou implementando a duplamente encadeada em códico :P
         }
     }    
-}
+}*/
 
 /*NO* erase(NO* l, int v){
 

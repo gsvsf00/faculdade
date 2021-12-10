@@ -49,18 +49,6 @@ void imprimir(){
     }
 }
 
-/*void imprime(contato *c, letras *l){
-	contato *p=c;
-	letras *t=l;
-	while(p!=NULL && t!=NULL){
-		//printf("\n");
-		printf("%c-> %s %s\n",t->inicial,p->nome,p->sobrenome);
-	
-	t =t->prox;	
-	p=p->prox;	
-	}
-}*/
-
 int remover(int pos){
     if(pos >=0 && pos < tam){
         if(pos == 0){ //inicio
@@ -79,6 +67,15 @@ int remover(int pos){
             free(lixo);
         }else{
             //:D :D :D :D sua vezzzzzzzzzzzzz
+        	int i;
+        	NO* aux = inicio;
+            for(i=0; i<pos-1;i++){
+            	aux=aux->prox;
+            }
+            NO* lixo = aux->prox;
+            aux->prox= aux->prox->prox;
+            free(lixo);
+            //Já estou implementando a duplamente encadeada em códico :P
         }
     }    
 }

@@ -1,4 +1,5 @@
 #include "tw.h"
+//Desativado por enquanto
 char t[280], *ttransfer ,*tsalvo;
 int count = 0;
 
@@ -108,7 +109,7 @@ void tweetar(){
         }
     }
     else{
-        printf("Você atingiu o limite de tweets [%d/%d]\n", count,qnttwt);
+        printf("Você atingiu o limite de tweets por bloco [%d/%d]\n", count,qnttwt);
         printf("Press 'Enter'");
         getchar();
     }

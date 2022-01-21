@@ -3,22 +3,15 @@
 #include <string.h>
 
 typedef struct no{
-    char twe[280];
+    int qndtweet;
     struct no * prox;
     struct no * ant;
+    char twe*;
 }NO;
 
-typedef struct bloco{
-    NO *inicio;
-    NO *fim;
-    int tam;
-}BLOCO;
-
-
-void adicionar(BLOCO *p, char *twe);
-void imprimir(BLOCO *p);
+void adicionar(int qntd);
+void imprimir(int qntd);
 int remover(int pos);
-BLOCO* inicializa(BLOCO *p);
 
 extern int qnttwt;
 extern int qqtwt;

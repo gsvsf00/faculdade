@@ -1,27 +1,89 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
+#include "lib.h"
 
-void baralhar(int [][13]);
-void dar(int [][13], char *[], char *[]);
+/*
+programa { 
+    "Pode ou n ter grafico"
+    autentificaçao{
+        Admin
+        Funcionario
+    }
 
-int main(void){
-    char *naipe[4] = {"Copas","Ouros","Paus","Espadas"};
-    char *face[13] = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
-    int baralho[4][13] = {0};
+    Administrador {
 
-    //system("color F1");//altera a cor de fundo e da fonte em hexadecimal
+        Cadastrar Funcionario{
+            nome
+            login
+            senha
+            id funcionario
+        }
 
-    printf("\t\t\t\t******************\n");//Imprime no monitor
-    printf("\t\t\t\t$ BlackJack $\n");//Imprime no monitor
-    printf("\t\t\t\t******************\n");//Imprime no monitor
-    printf("\t\t\t\tDATA : %s \n",__DATE__);//Data
-    printf("\t\t\t\tHORA: %s \n",__TIME__); //Hora
-    printf("\t\t\tSeja Bem-Vindo ao Grande Black Jack \n");
+        Cadastrar produto {
+            Nome
+            Valor {
+                Valor de compra
+                Valor de Venda
+            }
+            ID
+            Quantidade?
+        }
 
-    srand(time(NULL));
-    //baralhar(baralho);
-    //dar(baralho,face,naipe);
+        Estoque{
+            Movimentaçao de estoque{
+                "PRODUTO JA CADASTRADO"
+                Data/Hora
+                Qntd
+            }
+        }
+    }
+
+    Vendas{
+        (Consultas de Produto)
+        (Movimentaçao de estoque)
+        (Nota Fiscal)
+        (Relatorio Final)
+    } 
+
+    Funcionario {
+        Consultas (Estoque)
+        Vendas
+        Bater ponto?
+        
+    }
+
+    Fechar Caixa(Relatorio Final)
+}
+
+*/
+
+void menumain(){
+    printf("\n*--------------------Bem-Vindo--------------------*\n");
+    printf("* 1-| Logar Conta:                                *\n");
+    printf("* 0-| Sair:                                       *\n");
+    printf("*-------------------------------------------------*\n");
+    printf("Opção: ");
+}
+
+int main(){
+    int choice, aut=-1;
+    do{
+        system("clear");
+        menumain();
+        scanf("%d", &choice);
+        getchar();
+        
+        switch (choice){
+        case 0:
+            exit(0);
+            break;
+        case 1:
+            printf("Funcionario: 0 | Admin: 1\n"); // Gambiarra
+            printf("Digite: ");
+            scanf("%d", &aut);
+            LogarConta(aut);
+            break;
+        default:
+            break;
+        }
+    }while(choice!=0);
     return 0;
 }

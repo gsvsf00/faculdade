@@ -2,35 +2,31 @@
 //Matricula: 473801
 //GitHub Repository: https://github.com/gsv99/faculdade
 
-//Compilar "gcc main.c tweet.c -o main"
+//Compilar "gcc main.c tweet_2.c -o main"
 #include "tw.h"
 
-BLOCO* inicializa(BLOCO *p){
-    NO *inicio = NULL;
-    NO *fim = NULL;
-    int tam = 0;
 
-    return p;
-}
 
 int main(){
-    BLOCO *A;
-    A = inicializa(A);
-    char tweattar[280]= {"Será que essa merda vai da certo? espero que simn"};
-
-    adicionar(A,tweattar);
+    int qntd=0, qntdt=0;
+    printf("Digite a quantidade de tweets por bloco: ");
+    scanf("%d", &qntd);
+    getchar();
+    printf("Digite a quantidade de tweets: ");
+    scanf("%d", &qntdt);
+    getchar();
     
-    //imprimir();
+    for(int i = 0; i < qntdt; i++){
+        adicionar(qntd);
+    }
+
+  
+    imprimir(qntd);
     printf("\n");
     //erase();
     //imprimir();
     return 0;
 }
-
-
-
-
-
 
 
 /*int qnttwt = 0, qqtwt=0;

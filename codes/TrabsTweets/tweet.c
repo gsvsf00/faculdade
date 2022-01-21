@@ -56,7 +56,7 @@ int defsize(){
         while (ch != '\n'); // limpa caracteres extra
         digite();
     }
-}*/
+}
 
 void digite(){
     int lent;
@@ -68,13 +68,13 @@ void digite(){
         t[--lent] = 0; // apagar o ENTER
     } 
     else {
-    /* ENTER e possivelmente outros caracteres ficaram no buffer */
+    / * ENTER e possivelmente outros caracteres ficaram no buffer */
     int ch;
     do 
         ch = getchar(); 
     while (ch != '\n'); // limpa caracteres extra
     }
-}
+}*/
 
 void tweetar(){
     int x;

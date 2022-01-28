@@ -5,9 +5,8 @@
 //Compilar "gcc main.c tweet_2.c -o main"
 #include "tw.h"
 
-
-
 int main(){
+    system("clear");
     int qntd=0, qntdt=0;
     printf("Digite a quantidade de tweets por bloco: ");
     scanf("%d", &qntd);
@@ -17,12 +16,13 @@ int main(){
     getchar();
     
     for(int i = 0; i < qntdt; i++){
-        adicionar(qntd);
+        addtweet(qntd);
     }
-
   
-    imprimir(qntd);
+    imprimir();
+    //teste();
     printf("\n");
+    trendings();
     //erase();
     //imprimir();
     return 0;

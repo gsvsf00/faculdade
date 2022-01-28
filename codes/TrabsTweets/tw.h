@@ -6,16 +6,25 @@ typedef struct no{
     int qndtweet;
     struct no * prox;
     struct no * ant;
-    char twe*;
+    char twe[][281];
 }NO;
 
-void adicionar(int qntd);
-void imprimir(int qntd);
-int remover(int pos);
+typedef struct trd{
+    int top;
+    struct trd * up;
+    struct trd * down;
+    char *token;
+}TRD;
 
+void addtweet(int qntd);
+void addtrending(char *hash);
+void imprimir();
+void imprimirTrending();
+int remover(int pos);
 extern int qnttwt;
 extern int qqtwt;
 
+void teste();
 void armazenameto();
 int defsize();
 

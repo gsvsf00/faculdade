@@ -1,13 +1,18 @@
 #include "tw.h"
 
+//aqui bloco do tweets
 NO *inicio = NULL;
 NO *fim = NULL;
 int tam = 0;
 int count = 0;
-int contador = 0;
 char tweet[281];
 
-void adicionar(int qntd){
+//aqui vai o bloco do Trending Topic
+TRD *roof = NULL;
+TRD *floor = NULL;
+int size = 0;
+
+void addtweet(int qntd){
     if(qntd == 0){
         printf("Qntd == 0\n");
         return;
@@ -18,7 +23,7 @@ void adicionar(int qntd){
         NO *novo =(NO*) malloc (sizeof(NO));
         
         novo->qndtweet = qntd;
-        strcpy(novo->twe[0], tweet);
+        strcpy(novo->twe[1], tweet);
         novo->prox = NULL;
         novo->ant = NULL;
         
@@ -28,35 +33,28 @@ void adicionar(int qntd){
             fim = novo;
             tam++;
         }
-        else if (count < qntd){
+                
+        else if(inicio != NULL && fim != NULL){// no fim da lista
             fim->prox = novo;
             novo->ant = fim;
             fim = novo;
             tam++;
         }
-        else if(count == qntd){// no fim da lista
-            //printf("count == qntd\n");
-            fim->prox = novo;
-            novo->ant = fim;
-            fim = novo;
-            tam++;
-        }
-        else{// no fim
-            printf("Else\n");
-            fim->prox = novo;
-            novo->ant = fim;
-            fim = novo;
-            tam++;
+        else{
+            printf("insercao invalida! :/");
+            
         }
         count = 0;
-        contador = 0;
     }
     else if(count < qntd && tam != 0){ //Aqui add dentro do bloco que ja existe
         NO *aux = fim;
-        //printf("AddCount: %d\n", count);
-        strcpy(aux->twe[count], tweet);
-        //free(aux);
+        //printf("Count: %d\n", count);
+        strcpy(aux->twe[count+1], tweet);
+        //printf("Tweet: %s\n", aux->twe[count]);
+
     }
+    else
+        printf("insercao invalida! :/");
     count++;
 }
 
@@ -77,12 +75,11 @@ void digite(){
         ch = getchar(); 
     while (ch != '\n'); // limpa caracteres extra
     }
-    contador++;
 }
 
-void imprimir(int qntd){
+void imprimir(){
     NO *aux = inicio;
-    int i,j, size = 0;
+    int i;
     printf("\n*--------------------Imprimindo--------------------*\n");
     if(inicio == NULL){
 		printf("Vazio!!\n");
@@ -90,20 +87,16 @@ void imprimir(int qntd){
 		
         printf("Tam: %d\n", tam);
         printf("Count: %d\n", count);
-        printf("Qntd: %d\n", qntd);
-        printf("Contador: %d\n", qntd);
+        printf("Qntd: %d\n", aux->qndtweet);
+        
+        
 		do{
             printf("\n");
-            aux = inicio;
             for(i=0; i < tam ; i++){
-                if(count < qntd){
-                    for(j=0; j < qntd; j++)
-                    printf("Bloco[%d]\n        Tweet[%d]: %s \n", i, j+1, aux->twe[j]);
-                }
-                else{
-                    for(j=0; j < contador-1; j++){
-                            printf("Bloco[%d]\n        Tweet[%d]: %s \n", i, j+1, aux->twe[j]);
-                    }
+                for(int j=1; j <= aux->qndtweet; j++){
+                    printf("Bloco[%d]\n        Tweet[%d]: %s \n", i, j, aux->twe[j]);
+                    if(i == tam-1 && aux->qndtweet - j == count)
+                        break;
                 }
                 aux = aux->prox;
             }
@@ -113,36 +106,107 @@ void imprimir(int qntd){
     free(aux);
 }
 
+void teste(){
+    NO *aux = inicio;
+    for(int h=0; aux->twe[1][h] != '\0'; h++)
+        printf("[%c]", aux->twe[1][h]);
+}
 
-
-
-/*void adicionar(char *twe, int pos){
-    if(pos >= 0 && pos <= tam){
-        
-        NO *novo =(NO*) malloc (sizeof(NO));
-        strcpy(novo->twe, twe);
-        novo->prox = NULL;
-        
-        if(inicio == NULL){ //tam == 0 - lista vazia :D
-            inicio = novo;
-            fim = novo;
-        }else if(pos == 0){ //no inicio da lista
-            novo->prox = inicio;
-            inicio = novo;
-        }else if(pos == tam){// no fim da lista
-            fim->prox = novo;
-            fim = novo;
-        }else{
-            NO *aux = inicio;
-            int i;
-            for(i=0; i< pos-1; i++){
-                aux = aux->prox;
+void trendings(){
+    NO *aux = inicio;
+    if(inicio == NULL)
+        return;
+    do{
+        for(int i=0; i < tam ; i++){ //Aqui é o for dos blocos
+            for(int j = 1; j <= aux->qndtweet; j++){ //Aqui é o for dentro do bloco
+                const char s[2] = " ";
+                char *hash;
+                hash = strchr(aux->twe[j], '#');
+                hash = strtok(hash, s);
+                addtrending(hash);
+                
+                if(i == tam-1 && aux->qndtweet - j == count)
+                    break;
             }
-            novo->prox = aux->prox;
-            aux->prox = novo;
+            aux = aux->prox;
         }
-        tam++;
+    } while(aux != NULL);
+}
+
+void addtrending(char *hash){
+    TRD *new =(TRD*) malloc (sizeof(TRD));
+    new->top = 1;
+    strcpy(new->token, hash);
+    new->up = NULL;
+    new->down = NULL;
+
+    if(size == 0 || roof == NULL){
+        roof = new;
+        floor = new;
+        size++;
     }
+    else if(size != 0){
+        TRD *aux = roof;
+        for(int i=0; i < size; i++){
+            if(strcmp(aux->token, new->token) == 0){
+                new->top = aux->top+1;
+
+                if(new->top > aux->up->top){
+                    new->up = aux->up->up;
+                    new->down = aux->up;
+                    aux->up->up->down = new;
+                    aux->up->up = new;
+                    aux->up->down = aux->down;
+                    if(aux->down != NULL)
+                        aux->down->up = aux->up;
+                    else
+                        aux->up->down = NULL;
+                    free(aux);
+                }
+            }
+            else if(i < size-1){
+                floor->down = new;
+                new->up = floor;
+                floor = new;
+                size++;
+            }
+            aux = aux->down;
+        }
+    }
+    else
+        printf("insercao invalida ocorrida ao adicionar trending! :/\n");
+}
+
+void imprimirTrending(){
+    TRD *aux = roof;
+    int pos=0;
+    printf("\n Em ordem \n");
+    while(aux != NULL){
+        printf("%d:%s ", pos, aux->token);
+        aux = aux->down;
+    }
+    printf("\n");
+    
+}
+
+/*void trendings(){
+    NO *aux = inicio;
+    if(inicio == NULL)
+        return;
+    do{
+        for(int i=0; i < tam ; i++){ //Aqui é o for dos blocos
+            for(int j = 1; j <= aux->qndtweet; j++){ //Aqui é o for dentro do bloco
+                const char s[2] = " ";
+                char *hash;
+                hash = strchr(aux->twe[j], '#');
+                hash = strtok(hash, s);
+                printf( " %s\n", hash ); //linha que tem que por armazenagem
+                if(i == tam-1 && aux->qndtweet - j == count)
+                    break;
+            }
+            aux = aux->prox;
+        }
+    } while(aux != NULL);
 }*/
 
 /*int remover(int pos){

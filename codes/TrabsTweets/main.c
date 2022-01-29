@@ -20,9 +20,9 @@ int main(){
     }
   
     imprimir();
+    imprimirTrending();
     //teste();
     printf("\n");
-    trendings();
     //erase();
     //imprimir();
     return 0;

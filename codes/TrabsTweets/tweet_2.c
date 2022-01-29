@@ -8,8 +8,8 @@ int count = 0;
 char tweet[281];
 
 //aqui vai o bloco do Trending Topic
-TRD *roof = NULL;
-TRD *floor = NULL;
+TRD *teto = NULL;
+TRD *chao = NULL;
 int size = 0;
 
 void addtweet(int qntd){
@@ -55,6 +55,7 @@ void addtweet(int qntd){
     }
     else
         printf("insercao invalida! :/");
+    trendings();
     count++;
 }
 
@@ -83,13 +84,11 @@ void imprimir(){
     printf("\n*--------------------Imprimindo--------------------*\n");
     if(inicio == NULL){
 		printf("Vazio!!\n");
-	}else{
-		
-        printf("Tam: %d\n", tam);
-        printf("Count: %d\n", count);
-        printf("Qntd: %d\n", aux->qndtweet);
-        
-        
+	}else{	
+        //printf("Tam: %d\n", tam);
+        //printf("Count: %d\n", count);
+        //printf("Qntd: %d\n", aux->qndtweet);
+          
 		do{
             printf("\n");
             for(i=0; i < tam ; i++){
@@ -106,12 +105,6 @@ void imprimir(){
     free(aux);
 }
 
-void teste(){
-    NO *aux = inicio;
-    for(int h=0; aux->twe[1][h] != '\0'; h++)
-        printf("[%c]", aux->twe[1][h]);
-}
-
 void trendings(){
     NO *aux = inicio;
     if(inicio == NULL)
@@ -121,10 +114,17 @@ void trendings(){
             for(int j = 1; j <= aux->qndtweet; j++){ //Aqui é o for dentro do bloco
                 const char s[2] = " ";
                 char *hash;
-                hash = strchr(aux->twe[j], '#');
-                hash = strtok(hash, s);
-                addtrending(hash);
-                
+                char *ret;
+
+                ret = strpbrk(aux->twe[j], s);
+                if(ret) {
+                    hash = strchr(aux->twe[j], '#');
+                    hash = strtok(hash, s);
+                    //printf("%s\n", hash);
+                    addtrending(hash);
+                }
+                else
+                    break;
                 if(i == tam-1 && aux->qndtweet - j == count)
                     break;
             }
@@ -136,57 +136,66 @@ void trendings(){
 void addtrending(char *hash){
     TRD *new =(TRD*) malloc (sizeof(TRD));
     new->top = 1;
-    strcpy(new->token, hash);
+    new->token = hash;
     new->up = NULL;
     new->down = NULL;
 
-    if(size == 0 || roof == NULL){
-        roof = new;
-        floor = new;
+    TRD *aux = teto;
+
+    if(teto == NULL && chao == NULL){
+        printf("Criou\n");
+        teto = new;
+        chao = new;
         size++;
     }
-    else if(size != 0){
-        TRD *aux = roof;
+    else if(teto != NULL && chao != NULL){
         for(int i=0; i < size; i++){
             if(strcmp(aux->token, new->token) == 0){
-                new->top = aux->top+1;
+                printf("Aqui chegou\n");
+                new->top = aux->top +1;
+                aux = aux->up;
 
-                if(new->top > aux->up->top){
-                    new->up = aux->up->up;
+                /*if(aux->down == NULL || aux->up == NULL)
+                    break;
+                else if(new->top > aux->top){
+                    new->up = aux->up;
                     new->down = aux->up;
-                    aux->up->up->down = new;
-                    aux->up->up = new;
-                    aux->up->down = aux->down;
+                    aux->up->down = new;
+                    aux->up = new;
+                    aux->down = aux->down;
                     if(aux->down != NULL)
                         aux->down->up = aux->up;
                     else
-                        aux->up->down = NULL;
-                    free(aux);
-                }
+                        aux->down = NULL;
+                
+                }*/
+                free(aux);
             }
-            else if(i < size-1){
-                floor->down = new;
-                new->up = floor;
-                floor = new;
-                size++;
-            }
+            chao->down = new;
+            new->up = chao;
+            chao = new;
+            size++;
             aux = aux->down;
         }
+        
     }
     else
         printf("insercao invalida ocorrida ao adicionar trending! :/\n");
 }
 
 void imprimirTrending(){
-    TRD *aux = roof;
-    int pos=0;
-    printf("\n Em ordem \n");
+    TRD *aux = teto;
+    int pos=1;
+    printf("\n*--------------------Trending Topics--------------------*\n");
+    if(teto == NULL)
+        printf("\n              Nenhuma Trending no momento \n");
     while(aux != NULL){
-        printf("%d:%s ", pos, aux->token);
+        printf("\n%d: %s - [%d]\n", pos, aux->token, aux->top);
         aux = aux->down;
+        pos++;
     }
-    printf("\n");
-    
+    printf("\n*--------------------------------------------------------*\n");
+    free(aux);
 }
 
 /*void trendings(){

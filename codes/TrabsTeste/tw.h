@@ -12,4 +12,4 @@ typedef struct no{
 
 void adicionar(int qntd);
 void digite();
-void imprimir();.
+void imprimir();

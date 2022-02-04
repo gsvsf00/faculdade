@@ -4,34 +4,29 @@
 
 typedef struct no{
     int qndtweet;
+    int count;
+    char **twe;
+
     struct no * prox;
-    struct no * ant;
-    char twe[][281];
 }NO;
 
 typedef struct trd{
     int top;
-    struct trd * up;
-    struct trd * down;
     char *token;
+
+    struct trd * up;
+    struct trd * down; 
 }TRD;
 
-void addtweet(int qntd);
+void criartweet(int qntd, char *str);
+void addbloco(int qntd);
 void addtrending(char *hash);
 void imprimir();
 void imprimirTrending();
-int remover(int pos);
-extern int qnttwt;
-extern int qqtwt;
+void reodenar();
+void searchhash();
 
-void teste();
-void armazenameto();
-int defsize();
-
-void tweetar();
-void digite();
+//void digite();
 void trendings();
 
-void tweets();
-
-void clear();
+void tweet_file();

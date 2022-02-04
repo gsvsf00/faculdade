@@ -8,6 +8,7 @@
 int main(){
     system("clear");
     int qntd=0, qntdt=0;
+    char str[281];
     printf("Digite a quantidade de tweets por bloco: ");
     scanf("%d", &qntd);
     getchar();
@@ -16,11 +17,17 @@ int main(){
     getchar();
     
     for(int i = 0; i < qntdt; i++){
-        addtweet(qntd);
+        printf("\n---- FAZER TWEET ----\n");
+		printf("digite o tweet, e precione enter para terminar\n");
+		scanf("%280[^\n]%*c", str);
+        criartweet(qntd, str);
+		//addtweet(qntd, str);
+		printf("***Tweet feito***\n");
     }
   
     imprimir();
     imprimirTrending();
+    //tweet_file();
     //teste();
     printf("\n");
     //erase();

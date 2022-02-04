@@ -16,9 +16,9 @@ void adicionar(int qntd){
     if(tam == 0 || count == qntd){ // INICIALIZACAO DO BLOCO
         NO *novo =(NO*) malloc (sizeof(NO));
         novo->twe[0] = (char *)malloc(281);
-        
+        printf("[%d]\n", (sizeof *novo->twe / sizeof *novo->twe));
         novo->qndtweet = qntd;
-        strcpy(novo->twe[0], tweet);
+        strcpy(novo->twe[1], tweet);
         printf("TweeTest: %s\n", novo->twe[0]);
         novo->prox = NULL;
         novo->ant = NULL;
@@ -46,7 +46,7 @@ void adicionar(int qntd){
         NO *aux = fim;
         aux->twe[count] = (char *)malloc(281);
         //printf("Count: %d\n", count);
-        strcpy(aux->twe[count], tweet);
+        strcpy(aux->twe[count+1], tweet);
         //printf("Tweet: %s\n", aux->twe[count]);
 
     }
@@ -89,7 +89,7 @@ void imprimir(){
 		do{
             printf("\n");
             for(i=0; i < tam ; i++){
-                for(int j=0; j < aux->qndtweet; j++){
+                for(int j=1; j <= aux->qndtweet; j++){
                     printf("Bloco[%d]\n        Tweet[%d]: %s \n",i+1, j, aux->twe[j]);
                     //if(i == tam-1 && aux->qndtweet - j == count)
                        // break;

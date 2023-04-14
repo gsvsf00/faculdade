@@ -2,27 +2,31 @@
 <html>
 <head>
 	<title>Cadastro de Filmes</title>
+	<link rel="stylesheet" type="text/css" href="css/style-cad_filme.css">
 </head>
 <body>
 	<header>
 		<h1 class="logo">Cinema do Shopping</h1>
 		<p class="slogan">O melhor lugar para ver filmes</p>
-        <div class="menu-bar">
+        <nav>
             <ul>
               <li><a href="./index.html" class="my-button">Home</a></li>
               <li><a href="./cad_filme.html" class="my-button">Cadastrar Filme</a></li>
               <li><a href="#" class="my-button">Contato</a></li>
             </ul>
-          </div>          
+          </nav>          
 	</header>
 	<main>
 		<form action="#" method="post">
 			<label for="nome">Nome do Filme:</label>
 			<input type="text" id="nome" name="nome" tabindex="1" required>
+
 			<label for="sinopse">Sinopse do Filme:</label>
 			<textarea id="sinopse" name="sinopse" tabindex="2" required></textarea>
+
 			<label for="imagem">URL da Imagem:</label>
 			<input type="url" id="imagem" name="imagem" tabindex="3" required>
+
 			<label for="sala">Sala:</label>
 			<select id="sala" name="sala" tabindex="4" required>
 				<option value="">Selecione uma Sala</option>
@@ -30,6 +34,12 @@
 				<option value="sala2">Sala 2</option>
 				<option value="sala3">Sala 3</option>
 			</select>
+			
 			<label for="horarios">Horários:</label>
 			<input type="text" id="horarios" name="horarios" tabindex="5" required>
-			<p>Preencha os horários
+			<p>Preencha os horários separados por vírgula</p>
+			<input type="submit" value="Cadastrar Filme" tabindex="6">
+		</form>
+	</main>
+</body>
+</html>
